@@ -27,7 +27,6 @@ for user in $users; do
     echo "SAY HELLO TO MY LITTLE FRIEND!"
     echo "Deleting user: $user" | tee -a "$LOGFILE"
     sudo sysadminctl -deleteUser "$user" -secure
-    rm -rf "/Users/$user" 2>>"$LOGFILE"
 done
 
 echo "Deletion complete. Log saved to $LOGFILE"
