@@ -26,7 +26,7 @@ echo "Starting user deletion at $(date)" > "$LOGFILE"
 for user in $users; do
     echo "SAY HELLO TO MY LITTLE FRIEND!"
     echo "Deleting user: $user" | tee -a "$LOGFILE"
-    dscl . -delete "/Users/$user" 2>>"$LOGFILE"
+    sudo sysadminctl -deleteUser "$user" -secure
     rm -rf "/Users/$user" 2>>"$LOGFILE"
 done
 
