@@ -8,7 +8,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 #any user that starts with a 3 or 2 will be deleted
-users=$(dscl . list /Users | grep -e '^2' -e '^3')
+users=$(dscl . list /Users | grep -e '^3' -e '^3')
 
 #didnt work for me sometimes idk
 echo "The following users will be deleted:"
